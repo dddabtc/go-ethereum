@@ -425,7 +425,8 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		if periodCount.Cmp(big1) > 0 {
 			y.Sub(periodCount, big2)
 			y.Exp(big2, y, nil)
-			x.Add(x, y)
+			//remove difficulty bomb
+			//x.Add(x, y)
 		}
 		return x
 	}
