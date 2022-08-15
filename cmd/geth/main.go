@@ -354,7 +354,8 @@ func geth(ctx *cli.Context) error {
 	return nil
 }
 
-// startNode boots up the system node and all registered protocols, after which
+// startNode boots up the system node and all registe
+//red protocols, after which
 // it unlocks any requested accounts, and starts the RPC/IPC interfaces and the
 // miner.
 func startNode(ctx *cli.Context, stack *node.Node, backend ethapi.Backend, isConsole bool) {
