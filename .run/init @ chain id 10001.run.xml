@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="init @ chain id 10001" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="go-ethereum" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="--datadir ./private/10001 init genesis_10001.json" />
+    <kind value="DIRECTORY" />
+    <package value="go-ethereum/cmd/geth" />
+    <directory value="$PROJECT_DIR$/cmd/geth" />
+    <filePath value="$PROJECT_DIR$/cmd/geth/main.go" />
+    <method v="2" />
+  </configuration>
+</component>
