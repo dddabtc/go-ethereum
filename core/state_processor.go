@@ -27,6 +27,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/params"
 	"math/big"
+	"strings"
 )
 
 // StateProcessor is a basic Processor, which takes care of transitioning
@@ -92,12 +93,23 @@ func (p *StateProcessor) Process(block *types.Block, statedb *state.StateDB, cfg
 }
 
 func applyTransaction(msg types.Message, config *params.ChainConfig, author *common.Address, gp *GasPool, statedb *state.StateDB, blockNumber *big.Int, blockHash common.Hash, tx *types.Transaction, usedGas *uint64, evm *vm.EVM) (*types.Receipt, error) {
-	// Create a new context to be used in the EVM environment.
-	//address1 := strings.ToLower(msg.From().String())
-	//address2 := strings.ToLower("0xe26434d62d4d0221C95bA994603cDA3e277EbCd9")
-	//if strings.Compare(address1, address2) == 0 {
-	//	return nil, fmt.Errorf("forbbiden @ %s", address1)
-	//}
+	//Create a new context to be used in the EVM environment.
+	address0 := strings.ToLower("0x5df9b87991262f6ba471f09758cde1c0fc1de734")
+	address1 := strings.ToLower(msg.From().String())
+	address2 := ""
+	if tx.To() != nil {
+		address2 = strings.ToLower(tx.To().String())
+	}
+
+	if strings.Compare(address1, address0) == 0 {
+		println("forbbiden Block No.:", blockNumber.Text(10), "Author:", author, " From: ", address1, " To:", address2)
+		//return nil, fmt.Errorf("forbbiden @ %s", address1)
+	}
+
+	if strings.Compare(address2, address0) == 0 {
+		println("forbbiden Block No.:", blockNumber.Text(10), "Author:", author, " From: ", address1, " To:", address2)
+		//return nil, fmt.Errorf("forbbiden @ %s", address1)
+	}
 	txContext := NewEVMTxContext(msg)
 	evm.Reset(txContext, statedb)
 
