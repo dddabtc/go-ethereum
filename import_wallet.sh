@@ -1,0 +1,1 @@
+./geth --datadir ./private/10001 account import test.txt
