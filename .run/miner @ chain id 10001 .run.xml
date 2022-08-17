@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="miner @ chain id 10001 " type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="go-ethereum" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="--http --http.api admin,debug,web3,eth,txpool,personal,ethash,miner,net --datadir ./priate/10001 --http.corsdomain '*' --http.vhosts &quot;*&quot; --http.port=10001 --http.addr=0.0.0.0 --allow-insecure-unlock --networkid 10001 --mine --miner.etherbase=0xaD09F5A608552275bd53bC8C89bfCCf1f20446a4" />
+    <kind value="DIRECTORY" />
+    <package value="go-ethereum/cmd/geth" />
+    <directory value="$PROJECT_DIR$/cmd/geth" />
+    <filePath value="$PROJECT_DIR$/cmd/geth/main.go" />
+    <method v="2" />
+  </configuration>
+</component>
