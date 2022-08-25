@@ -2,7 +2,7 @@
   <configuration default="false" name="miner @ chain id 10001 " type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="go-ethereum" />
     <working_directory value="$PROJECT_DIR$" />
-    <parameters value="--allow-insecure-unlock --datadir ./private/10001 --networkid 10001 --http --http.addr '0.0.0.0' --http.corsdomain &quot;*&quot; --http.port 10001 --http.api 'personal,eth,net,web3,txpool,miner' --mine --miner.etherbase=0xaD09F5A608552275bd53bC8C89bfCCf1f20446a4 --ipcpath \\.\pipe\miner.ip --port 30306" />
+    <parameters value="--allow-insecure-unlock --datadir ./private/10001 --networkid 10001 --http --http.addr '0.0.0.0' --http.corsdomain &quot;*&quot; --http.port 10001 --http.api 'admin,debug,web3,eth,txpool,personal,ethash,miner,net' --mine --miner.etherbase=0xaD09F5A608552275bd53bC8C89bfCCf1f20446a4 --ipcpath \\.\pipe\miner.ip --port 30306 --networkid 10001" />
     <kind value="DIRECTORY" />
     <package value="go-ethereum/cmd/geth" />
     <directory value="$PROJECT_DIR$/cmd/geth" />

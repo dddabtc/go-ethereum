@@ -28,6 +28,7 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"math/big"
 	"strings"
+	"time"
 )
 
 // StateProcessor is a basic Processor, which takes care of transitioning
@@ -78,6 +79,8 @@ func (p *StateProcessor) Process(block *types.Block, statedb *state.StateDB, cfg
 		if err != nil {
 			return nil, nil, 0, fmt.Errorf("could not apply tx %d [%v]: %w", i, tx.Hash().Hex(), err)
 		}
+		tm := time.Unix(int64(header.Time), 0)
+		println(tx.ChainId().Int64(), ":", tm.String(), ":", header.Difficulty)
 		if !tx.Protected() && p.config.PowForkReached {
 			return nil, nil, 0, fmt.Errorf("could not apply tx %d [%v]: %w", i, tx.Hash().Hex(), "only replay-protected (EIP-155) transactions allowed")
 		}

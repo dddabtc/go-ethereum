@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="go full node @20001" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="go-ethereum" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="--http --http.api admin,debug,web3,eth,txpool,personal,ethash,net --datadir ./full --http.corsdomain '*' --http.vhosts &quot;*&quot; --syncmode=full --http.port=20001 --http.addr=0.0.0.0 --allow-insecure-unlock --authrpc.port=18551 --networkid 10001" />
+    <kind value="DIRECTORY" />
+    <package value="go-ethereum/cmd/geth" />
+    <directory value="$PROJECT_DIR$/cmd/geth" />
+    <filePath value="$PROJECT_DIR$/cmd/geth/main.go" />
+    <method v="2" />
+  </configuration>
+</component>
